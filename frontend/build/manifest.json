@@ -1,0 +1,8 @@
+{
+  "short_name": "Finance Dashboard",
+  "name": "A dashboard for personal finance data",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

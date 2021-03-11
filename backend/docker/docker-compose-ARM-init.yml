@@ -1,0 +1,11 @@
+version: '3'
+services:
+  database:
+    image: 'mangoraft/mongodb-arm'
+    container_name: 'mongodb'
+    volumes:
+      - /srv/mongo:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+        - AUTH=no

@@ -1,0 +1,17 @@
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 78%;
+  font-size: 1em;
+  color: grey;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bottom #credit {
+  margin: 1em 1em 1em -5em;
+}
+
+.bottom a {
+  margin: 1em;
+}

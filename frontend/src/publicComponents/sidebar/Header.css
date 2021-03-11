@@ -1,0 +1,38 @@
+#sideBarCollapseBtn {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0.5rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 30px;
+  color: #3d53af;
+}
+
+.head {
+  align-items: center;
+  grid-row: 1;
+  grid-column: 1/14;
+}
+
+.head h1 {
+  grid-column: 2/4;
+  grid-row: 1;
+}
+
+.head select {
+  border-radius: 0.25em;
+  box-shadow: 0px 0px 10px 5px #bbb9b8;
+  border: 0;
+}
+
+#monthSelector {
+  grid-row: 1;
+  grid-column: 11;
+  margin-right: 2em;
+}
+
+#yearSelector {
+  grid-row: 1;
+  grid-column: 12;
+  margin-left: 2em;
+}

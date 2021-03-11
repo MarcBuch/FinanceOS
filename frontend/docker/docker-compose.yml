@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  frontend:
+    image: registry.gitlab.com/marcbuch/financedashboard-frontend
+    container_name: financeOS-frontend
+    ports:
+      - 3000:3000
+  backend:
+    image: registry.gitlab.com/marcbuch/financedashboard-backend
+    container_name: financeOS-backend
+    ports:
+      - 5000:5000
+  authService:
+    image: registry.gitlab.com/marcbuch/financedashboard-authenticationservice
+    container_name: financeOS-authService
+    ports:
+      - 5001:5001

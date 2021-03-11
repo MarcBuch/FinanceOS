@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile-ARM
+    container_name: 'node'
+    ports:
+      - 3000:3000
+    external_links:
+      - mongodb:mongodb

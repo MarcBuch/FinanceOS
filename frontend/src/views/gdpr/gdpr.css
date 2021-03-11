@@ -1,0 +1,8 @@
+.main-content {
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.main-content li {
+  font-size: 1.25em;
+}

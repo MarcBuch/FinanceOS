@@ -1,0 +1,115 @@
+body {
+  background-color: #f6f4f1;
+  font-family: roboto, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0em;
+}
+
+a:hover {
+  color: #3d53af;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  /* grid-auto-rows: minmax(100px, auto); */
+  grid-template-rows: 0.15fr;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.75em;
+  text-align: center;
+  box-shadow: 0px 0px 10px 5px #bbb9b8;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.positive {
+  color: rgb(90, 201, 104);
+}
+
+.negative {
+  color: rgb(255, 82, 83);
+}
+
+.amount {
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+.description {
+  color: grey;
+  margin-bottom: 2em;
+  margin-top: 0.75em;
+}
+
+.page {
+  width: 100%;
+}
+
+#error {
+  text-align: center;
+  grid-row: 1/2;
+  grid-column: 1/14;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+  h1 {
+    grid-row: 1;
+    grid-column: 2/6;
+    white-space: nowrap;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0em;
+  }
+
+  .amount {
+    font-size: 2.4em;
+    margin-bottom: 0px;
+  }
+
+  .description {
+    color: grey;
+    margin-bottom: 2em;
+    margin-top: 0.75em;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+
+  .mt-5 {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,21 @@
+.about .main-content {
+  grid-column: 2/13;
+  grid-row: 1;
+  color: #000;
+}
+
+.about .main-content #app-description {
+  grid-column: 2/13;
+  grid-row: 1;
+  margin-bottom: 5em;
+}
+
+.about #app-description h1 {
+  font-size: 3em;
+  margin: 2em 0 1em 0;
+}
+
+.about .footer {
+  grid-column: 2/13;
+  grid-row: 3;
+}

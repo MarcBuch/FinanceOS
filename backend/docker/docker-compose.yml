@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+    app:
+        image: registry.gitlab.com/marcbuch/financedashboard-backend
+        container_name: financeOS-backend
+        ports:
+            - 5000:5000

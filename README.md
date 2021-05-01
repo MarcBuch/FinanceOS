@@ -1,10 +1,10 @@
-# FinanceDashboard-React
-React version of the personal finance dashboard
+# FinanceOS
+Data analytics for personal finance and portfolio tracking.
 
 ## Frontend
 - Contains the CRA frontend code.
 
-## Backend
+## Data Service
 - Contains the backend service responsible for database access.
 
 ## Authentication Service

@@ -1,42 +1,31 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { AppDispatch, RootState } from '../redux/store';
-import userActions from '../redux/actions/userActions';
-import statisticActions from '../redux/actions/statisticActions';
-import { IAction, IUser } from '../redux/types';
+import ReactLoading from 'react-loading';
 
+// Redux
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import fetchUserToken from '../redux/actions/userActions';
+import { selectUserState } from '../redux/slices/userSlice';
+
+// Components
 import User from '../components/User';
-import ProtectedRoutes from '../components/ProtectedRoutes';
 
-interface IProps {
-  loginUser: (username, password) => IAction;
-  user: IUser;
-}
+const IndexPage = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const userState = useAppSelector(selectUserState);
 
-export const IndexPage = ({ loginUser, user }: IProps): JSX.Element => {
   useEffect(() => {
-    loginUser('marc', '12345');
-  }, []);
+    dispatch(fetchUserToken({ username: 'marc', password: '12345' }));
+  }, [dispatch]);
 
   return (
-    <>
-      <User user={user} />
-      {user.token ? <ProtectedRoutes /> : ''}
-    </>
+    <div>
+      {userState.loading ? (
+        <ReactLoading type="bars" color="white" />
+      ) : (
+        <User userId={userState.userId} />
+      )}
+    </div>
   );
 };
 
-const mapStateToProps = (store: RootState) => {
-  return {
-    user: store.user,
-  };
-};
-
-const mapDispatchToProps = (dispatch: AppDispatch) => {
-  return {
-    loginUser: (username, password) =>
-      dispatch(userActions.loginUser(username, password)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
+export default IndexPage;

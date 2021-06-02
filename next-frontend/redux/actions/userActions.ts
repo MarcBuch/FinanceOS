@@ -1,40 +1,28 @@
-import { ActionCreator, AnyAction } from 'redux';
-import { Constants } from '../types';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-interface IUserLogin {
-  success: boolean;
-  token: {
-    token: string;
-    expires: string;
-  };
-  expiresIn: string;
-  userID: string;
-}
+const fetchUserToken = createAsyncThunk(
+  'user/fetchUserToken',
+  async (userData: { username: string; password: string }, thunkAPI) => {
+    const { username, password } = userData;
 
-const dispatchLogin = (user: IUserLogin) => ({
-  type: Constants.LOGIN_USER,
-  payload: {
-    id: user.userID,
-    token: user.token.token,
-    expiresIn: user.expiresIn,
-  },
-});
+    try {
+      const response = await axios.post(
+        'http://financeos:30002/api/auth/login',
+        { username, password }
+      );
+      const { userID, expiresIn } = response.data;
+      const { token } = response.data.token;
 
-const loginUser = (username: string, password: string) => (
-  dispatch,
-  getState,
-  axios
-) => {
-  axios
-    .post('http://localhost:30002/api/auth/login', { username, password })
-    .then((res) => res.data)
-    .then((user: IUserLogin) => {
-      dispatch(dispatchLogin(user));
-    });
-};
+      return {
+        userId: userID,
+        token,
+        expiresIn,
+      };
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
 
-const userActions = {
-  loginUser,
-};
-
-export default userActions;
+export default fetchUserToken;

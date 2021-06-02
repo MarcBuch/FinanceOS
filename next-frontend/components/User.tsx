@@ -1,10 +1,9 @@
 import React from 'react';
-import { IUser } from '../redux/types';
 
 interface IProps {
-  user: IUser;
+  userId: string;
 }
 
-const User = ({ user }: IProps): JSX.Element => <h1>Hello, {user.id}</h1>;
+const User = ({ userId }: IProps): JSX.Element => <h1>Hello, {userId}</h1>;
 
 export default User;

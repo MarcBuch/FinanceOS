@@ -1,13 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
-import axios from 'axios';
-
-import RootReducer from './reducers/index';
+import userReducer from './slices/userSlice';
 
 const store = configureStore({
-  reducer: RootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(thunk.withExtraArgument(axios)),
+  reducer: userReducer,
   devTools: process.env.NODE_ENV !== 'production',
 });
 

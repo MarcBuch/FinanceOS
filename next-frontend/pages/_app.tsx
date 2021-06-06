@@ -6,12 +6,10 @@ import store from '../redux/store';
 // Styling
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
-}
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
+  <Provider store={store}>
+    <Component {...pageProps} />
+  </Provider>
+);
 
 export default MyApp;

@@ -2,18 +2,46 @@ import React from 'react';
 import Link from 'next/link';
 
 const Navbar = (): JSX.Element => (
-  <div className="m-2 flex space-x-4 text-lg">
-    <Link href="/" passHref>
-      <a href="replace" className="text-2xl font-semibold">
-        Finance<strong className="textcolor-main">OS</strong>
-      </a>
-    </Link>
-    <Link href="/about" passHref>
-      <a href="replace" className="pt-1">
-        About
-      </a>
-    </Link>
-  </div>
+  <nav className="max-w-screen-xl m-aut px-4">
+    <div className="relative flex justify-start h-16">
+      <div className="flex items-stretch flex-1 px-4">
+        <div className="flex items-center">
+          <Link href="/" passHref>
+            <a href="replace" className="text-2xl font-semibold">
+              Finance<strong className="textcolor-main ml-0.5">OS</strong>
+            </a>
+          </Link>
+        </div>
+        <div className="flex items-center ml-6">
+          <Link href="/about" passHref>
+            <a href="replace" className="navLink">
+              About
+            </a>
+          </Link>
+          <Link href="/pricing" passHref>
+            <a href="replace" className="navLink">
+              Pricing
+            </a>
+          </Link>
+          <Link href="/contact" passHref>
+            <a href="replace" className="navLink">
+              Contact
+            </a>
+          </Link>
+        </div>
+      </div>
+      <div className="flex items-center pr-2">
+        <Link href="/p" passHref>
+          <a
+            href="replace"
+            className="flex button-main align-center justify-center"
+          >
+            Get Started
+          </a>
+        </Link>
+      </div>
+    </div>
+  </nav>
 );
 
 export default Navbar;

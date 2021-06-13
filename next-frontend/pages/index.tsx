@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 // Components
 import Navbar from '../components/Navbar';
+import LoginButton from '../components/auth/LoginButton';
 
 const IndexPage = (): JSX.Element => {
   return (
@@ -24,14 +25,10 @@ const IndexPage = (): JSX.Element => {
                 </p>
                 <div className="justify-start mt-5 flex">
                   <div className="rounded-md">
-                    <Link href="/p" passHref>
-                      <a
-                        href="replace"
-                        className="button-main flex align-center justify-center w-full px-8 py-4 rounded-md text-lg text-transparent"
-                      >
-                        Sign up for free
-                      </a>
-                    </Link>
+                    <LoginButton
+                      className="button-main flex align-center justify-center w-full px-8 py-4 rounded-md text-lg text-transparent"
+                      text="Sign up for free"
+                    />
                   </div>
                   <div className="ml-3 rounded-md">
                     <Link href="/p" passHref>

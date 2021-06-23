@@ -1,7 +1,11 @@
 import React from 'react';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const AuthProvider = ({ children }) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+const AuthProvider = ({ children }: IProps): JSX.Element => {
   const domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN;
   const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
   const redirectUri = 'http://localhost:3000/p/dashboard';

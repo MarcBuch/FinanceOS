@@ -1,6 +1,8 @@
 import React from 'react';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 
+import LoginLoading from './LoginLoading';
+
 interface IProps {
   children: React.ReactNode;
 }
@@ -20,5 +22,5 @@ const ProtectedWrapper = ({ children }: IProps): JSX.Element => {
 };
 
 export default withAuthenticationRequired(ProtectedWrapper, {
-  onRedirecting: () => <h1>Youre not logged in</h1>,
+  onRedirecting: () => <LoginLoading />,
 });

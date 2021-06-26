@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import LoginButton from './auth/LoginButton';
+import LoginButton from '../auth/LoginButton';
 
 const Navbar = (): JSX.Element => (
   <nav className="max-w-screen-xl m-auto px-4">
@@ -13,6 +13,7 @@ const Navbar = (): JSX.Element => (
               Finance<strong className="text-main ml-0.5">OS</strong>
             </a>
           </Link>
+          <span className="text-sm text-gray-500 ml-1">Testing</span>
         </div>
         <div className="flex items-center ml-6">
           <Link href="/about" passHref>

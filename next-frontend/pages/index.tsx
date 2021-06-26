@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 // Components
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navigation/Navbar';
 import LoginButton from '../components/auth/LoginButton';
 
 const IndexPage = (): JSX.Element => {

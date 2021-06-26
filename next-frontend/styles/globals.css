@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .text-main {
-  color: #3d53af;
+  color: #5064b7;
 }
 
 .bg-main {
@@ -12,6 +12,14 @@
 
 .border-main {
   border-color: #3d53af;
+}
+
+.text-positive {
+  color: #51b45d;
+}
+
+.text-negative {
+  color: #ff5253;
 }
 
 .navLink {
@@ -40,4 +48,10 @@
 
 .button-main:hover {
   opacity: 0.8;
+}
+
+.divider {
+  border: none;
+  display: block;
+  height: 2px;
 }
